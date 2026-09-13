@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   applicationName: companyConfig.name,
   category: "Technology",
   icons: {
-    icon: [{ url: companyConfig.logoPath, type: "image/svg+xml" }],
+    icon: [{ url: companyConfig.logoPath, type: "image/png" }],
     apple: "/apple-touch-icon.png",
   },
   openGraph: {

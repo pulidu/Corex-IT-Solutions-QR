@@ -19,7 +19,7 @@ export const companyConfig = {
   description:
     "Innovative software, web and digital solutions designed to help businesses grow.",
   url: "https://www.corexitsolutions.com/",
-  logoPath: "/logo.svg",
+  logoPath: "/logo.png",
   location: "Colombo, Sri Lanka",
   contact: {
     phone: "(+94) 78 460 0136",
