@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-display: var(--font-space-grotesk), var(--font-inter), ui-sans-serif,
+    system-ui, sans-serif;
+
+  --color-navy: #071426;
+  --color-navy-light: #0c1e38;
+  --color-navy-lighter: #12294d;
+  --color-electric: #1677ff;
+  --color-electric-dark: #0b5ae0;
+  --color-silver: #bfc7d5;
+
+  --animate-fade-in-up: fade-in-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-spin-slow: spin-slow 16s linear infinite;
+  --animate-pulse-soft: pulse-soft 4s ease-in-out infinite;
+  --animate-glow-breathe: glow-breathe 5s ease-in-out infinite;
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes spin-slow {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes pulse-soft {
+    0%,
+    100% {
+      opacity: 0.55;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes glow-breathe {
+    0%,
+    100% {
+      opacity: 0.42;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.85;
+      transform: scale(1.07);
+    }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-navy font-sans text-silver antialiased;
+}
+
+::selection {
+  background-color: var(--color-electric);
+  color: #ffffff;
+}
+
+.bg-grid {
+  background-image: linear-gradient(
+      to right,
+      rgb(191 199 213 / 0.045) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgb(191 199 213 / 0.045) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+.bg-grid-dots {
+  background-image: radial-gradient(
+    rgb(22 119 255 / 0.14) 1px,
+    transparent 1px
+  );
+  background-size: 44px 44px;
+  background-position: 22px 22px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
